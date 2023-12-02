@@ -2,9 +2,7 @@ from flask import Flask,render_template,request
 from io import StringIO
 from program import nlp_fun
 
-
 app = Flask(__name__)
-
 
 @app.route('/' ,methods=["POST","GET"])
 def index():
@@ -18,11 +16,8 @@ def ind():
     output = nlp_fun(x,buffer)
     return render_template('index.html',output=output)
     
-
-    
-
 if (__name__) =='__main__':
-    app.run(debug=False,host=0.0.0.0)
+    app.run(debug=True)
 
 
 
